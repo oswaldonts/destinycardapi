@@ -9,7 +9,13 @@ const damageType = require('../enums/DamageType');
 const ammoType = require('../enums/AmmoType');
 
 async function index(req, res, next) {
-  let inventoryItems = await InventoryItem.find({itemType: req.query.itemType});
+  let inventoryItemFilter = {itemType: req.query.itemType}
+
+  if (req.query.itemType != 3 && req.query.classType) {
+    inventoryItemFilter.classType = req.query.classType;
+  }
+
+  let inventoryItems = await InventoryItem.find(inventoryItemFilter);
   let newInventoryItems = [];
 
   inventoryItems.map((inventoryItem, index) => {
