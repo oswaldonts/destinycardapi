@@ -7,7 +7,6 @@ const cors = require('cors');
 require('dotenv').config();
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var inventoryItemRouter = require('./routes/inventoryItems');
 
 var app = express();
@@ -29,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors(corsOptions));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/inventoryItems', inventoryItemRouter);
 
 // catch 404 and forward to error handler
@@ -54,5 +52,5 @@ module.exports = app;
 const mongoose = require('mongoose');
 
 mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@destinydb@`)
-.then(() => {console.log('conectado');})
+.then(() => {console.log('connected to db');})
 .catch((e) => {console.log(e);})
