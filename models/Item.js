@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const InventoryItemSchema = new Schema({
+const ItemSchema = new Schema({
   "displayProperties": {
     "description": {
       "type": "String"
@@ -43,6 +43,6 @@ const InventoryItemSchema = new Schema({
   },
 }, { collection: 'inventory_items' });
 
-const InventoryItem = mongoose.model('InventoryItem', InventoryItemSchema);
+const Item = mongoose.model('Item', ItemSchema);
 
-module.exports = InventoryItem;
+module.exports = Item;
