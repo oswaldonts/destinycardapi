@@ -23,9 +23,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 This app uses Bungie's Destiny 2 API to search information for an specific item and then saves it in the database. Also it uses Azure Cosmos DB API for MongoDB.
 
-You can use two endpoints (for now)
+You can use two endpoints
 
-GET /inventoryItems\
+GET /api/destiny/tems\
 This will show all information stored in the database
 
 It uses the following query params\
@@ -34,9 +34,9 @@ with the following values `itemType=2` for weapons, `itemType=3` for armors\
 `classType`\
 with the following values `classType=0` for titan, `classType=1` for hunter, `classType=2` for warlock\
 
-POST /inventoryItems\
+POST /api/destiny/items\
 This is used to insert data in the database
 
-It uses the following query params\
+It uses the following body params\
 `hash`\
 Hash is the id for the item in bungie api, you can get it from several apps like [data.destinysets.com](https://data.destinysets.com), [light.gg](https://light.gg)
