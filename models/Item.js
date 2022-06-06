@@ -41,7 +41,7 @@ const ItemSchema = new Schema({
   "defaultDamageType": {
     "type": "Number"
   },
-}, { collection: 'inventory_items' });
+}, { collection: 'items' });
 
 const Item = mongoose.model('Item', ItemSchema);
 
