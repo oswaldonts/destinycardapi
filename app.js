@@ -51,6 +51,10 @@ module.exports = app;
 //base de datos
 const mongoose = require('mongoose');
 
-mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@destinydb@`)
+const username = encodeURIComponent(process.env.DB_USERNAME);
+const password = encodeURIComponent(process.env.DB_PASSWORD);
+const cluster = encodeURIComponent(process.env.DB_HOST);
+
+mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}/?retryWrites=true&w=majority`)
 .then(() => {console.log('connected to db');})
 .catch((e) => {console.log(e);})
