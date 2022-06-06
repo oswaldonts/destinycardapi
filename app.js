@@ -55,6 +55,6 @@ const username = encodeURIComponent(process.env.DB_USERNAME);
 const password = encodeURIComponent(process.env.DB_PASSWORD);
 const cluster = encodeURIComponent(process.env.DB_HOST);
 
-mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}/?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}/${process.env.DB_DATABASE}?retryWrites=true&w=majority`)
 .then(() => {console.log('connected to db');})
 .catch((e) => {console.log(e);})
