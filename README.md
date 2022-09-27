@@ -2,7 +2,7 @@
 
 This is a project that serves some information from Destiny 2 items.
 
-To open the project use the following link [destinycardapi.azurewebsites.net](https://destinycardapi.azurewebsites.net).
+To open the project use the following link [destinycardapi.herokuapp.com](https://destinycardapi.herokuapp.com).
 
 This app worked together with [Destiny Card App](https://github.com/oswaldtzh/destinycardapp).
 
