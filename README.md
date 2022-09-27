@@ -25,7 +25,7 @@ This app uses Bungie's Destiny 2 API to search information for an specific item 
 
 You can use two endpoints
 
-GET /api/destiny/tems\
+GET /api/destiny/items\
 This will show all information stored in the database
 
 It uses the following query params\
