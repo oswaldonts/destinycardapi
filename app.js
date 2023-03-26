@@ -46,8 +46,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
-
 //base de datos
 const mongoose = require('mongoose');
 
@@ -55,6 +53,9 @@ const username = encodeURIComponent(process.env.DB_USERNAME);
 const password = encodeURIComponent(process.env.DB_PASSWORD);
 const cluster = encodeURIComponent(process.env.DB_HOST);
 
-mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}/${process.env.DB_DATABASE}?retryWrites=true&w=majority`)
+//mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}/${process.env.DB_DATABASE}?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb://127.0.0.1:27017/myapp`)
 .then(() => {console.log('connected to db');})
 .catch((e) => {console.log(e);})
+
+module.exports = app;
